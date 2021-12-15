@@ -36,6 +36,7 @@ const EditMovieForm = (props) => {
         e.preventDefault();
         axios.put(`http://localhost:9000/api/movies/${id}`, movie)
             .then(res=>{
+				
                 setMovies(res.data);
                 push(`/movies/${movie.id}`);
 			})
@@ -45,7 +46,7 @@ const EditMovieForm = (props) => {
 	}
 	
 	const { title, director, genre, metascore, description } = movie;
-
+	
     return (
 	<div className="col">
 		<div className="modal-content">
